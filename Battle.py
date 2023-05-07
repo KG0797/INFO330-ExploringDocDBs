@@ -5,10 +5,6 @@ mongoClient = MongoClient("mongodb://localhost/pokemon")
 pokemonDB = mongoClient['pokemondb']
 pokemonColl = pokemonDB['pokemon_data']
 
-#connect to SQL
-conn = sqlite3.connect('pokemon.sqlite')
-cursor = conn.cursor()
-
 def fetch(pokemonid):
     return pokemonColl.find_one({"pokedex_number":pokemonid})
 
