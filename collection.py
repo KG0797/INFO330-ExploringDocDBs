@@ -27,7 +27,6 @@ for cnt in range(801):
     row=list(cursor.fetchone())
 
     columns=[column[0] for column in cursor.description]
-    columns
 
     json_obj={}
     for i in range(len(columns)):
