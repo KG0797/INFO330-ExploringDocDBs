@@ -36,7 +36,9 @@ for cnt in range(801):
             json_obj[columns[i]]=row[i]
     json_str=json.dumps(json_obj)
     json_data=json.loads(json_str)
-    x=pokemonColl.insert_one(json_data)
+    existing_document = pokemonColl.find_one({"pokedex_number": json_data["pokedex_number"]})
+    if existing_document is None:
+        x=pokemonColl.insert_one(json_data)
   
 documents=pokemonColl.find()
 for i in documents:
