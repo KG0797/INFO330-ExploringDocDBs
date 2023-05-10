@@ -19,6 +19,7 @@ documents=pokemonColl.find()
 for i in documents:
     print(i)
  
+#need to change connect path if needed.
 conn=sqlite3.connect(r"C:\Users\Katherine Guo\Desktop\info330\INFO330-CreatingRelations2\pokemon.db")
 cursor=conn.cursor()
 
